@@ -1,11 +1,11 @@
-import { RepositpryList } from './components/RepositpryList';
+import { RepositoryList } from './components/RepositoryList';
 import './styles/global.scss'
 
 export function App() {
   
   return (
     <>
-      <RepositpryList/>
+      <RepositoryList/>
     </>
   );
 }

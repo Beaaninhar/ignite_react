@@ -1,4 +1,10 @@
-const nomeRepositorio = "ana"
+import { RepositpryItem } from "./RepositoryItem";
+
+const repository = {
+  name: "julia",
+  description: "Forms in react",
+  link: "https://github.com/"
+}
 
 export function RepositpryList() {
     return (
@@ -6,23 +12,8 @@ export function RepositpryList() {
             <h1>Lista de repositórios</h1>
 
             <ul>
-                <li>
-                    <strong>{nomeRepositorio}</strong>
-                    <p>Forms in react</p>
-
-                    <a href="">
-                      Acessar repositório
-                    </a>
-                </li>
-
-                <li>
-                    <strong>unform</strong>
-                    <p>Forms in react</p>
-
-                    <a href="">
-                      Acessar repositório
-                    </a>
-                </li>
+              <RepositpryItem repository={repository}/>
+              <RepositpryItem repository={repository}/>
             </ul>
         </section>
     )

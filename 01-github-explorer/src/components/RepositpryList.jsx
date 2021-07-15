@@ -1,5 +1,7 @@
 import { RepositpryItem } from "./RepositoryItem";
 
+import '../styles/repositories.scss'
+
 const repository = {
   name: "julia",
   description: "Forms in react",

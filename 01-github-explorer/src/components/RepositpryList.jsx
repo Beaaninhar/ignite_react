@@ -1,18 +1,10 @@
+import { useEffect, useState } from "react";
 import { RepositpryItem } from "./RepositoryItem";
 
 import '../styles/repositories.scss'
-import { useEffect, useState } from "react";
-
-// https://api.github.com/orgs/rocketseat/repos
-
-const repository = {
-  name: "julia",
-  description: "Forms in react",
-  link: "https://github.com/"
-}
 
 export function RepositpryList() {
-  const [repositories, setRepositories] = useState(0)
+  const [repositories, setRepositories] = useState([])
 
   useEffect(() => {
     fetch('https://api.github.com/orgs/rocketseat/repos')
@@ -25,8 +17,9 @@ export function RepositpryList() {
             <h1>Lista de repositórios</h1>
 
             <ul>
-              <RepositpryItem repository={repository}/>
-              <RepositpryItem repository={repository}/>
+              {repositories.map(repository => {
+                return <RepositpryItem key={repository.name} repository={repository} />
+              })}
             </ul>
         </section>
     )

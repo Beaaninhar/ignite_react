@@ -1,6 +1,7 @@
-import './styles/global.css'
+import { RepositpryList } from './components/RepositpryList';
+import './styles/global.scss'
 
 export function App() {
   
-  return <h1>Olá, tudo bem?</h1>;
+  return <RepositpryList/>;
 }

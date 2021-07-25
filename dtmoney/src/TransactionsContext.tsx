@@ -30,21 +30,21 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   useEffect(() => {
-    api('trasactions')
-      .then(response => setTransactions(response.data.trasactions))
+    api('transactions')
+      .then(response => setTransactions(response.data.transactions))
   }, []);
 
   async function createTransaction(transactionInput: TransactionInput) {
 
-    const response = await api.post('/trasactions', {
+    const response = await api.post('/transactions', {
       ...transactionInput,
       createdAd: new Date(),
     });
-    const { trasaction } = response.data;
+    const { transaction } = response.data;
 
     setTransactions([
-      ...trasaction,
-      trasaction
+      ...transaction,
+      transaction
     ]);
   }
 

@@ -5,12 +5,12 @@ import { App } from './App';
 
 createServer({
   models: {
-    trasaction: Model,
+    transaction: Model,
   },
 
   seeds(server) {
     server.db.loadData({
-      trasactions: [
+      transactions: [
         {
           id: 5,
           title: 'Freelance',
@@ -34,14 +34,14 @@ createServer({
   routes(){
     this.namespace ='api'
 
-    this.get('/trasactions', () => {
-      return this.schema.all('trasaction')
+    this.get('/transactions', () => {
+      return this.schema.all('transaction')
     })
 
-    this.post('/trasactions', (schema,request) => {
+    this.post('/transactions', (schema,request) => {
       const data = JSON.parse(request.requestBody);
 
-      return schema.create('trasaction', data);
+      return schema.create('transaction', data);
     })
   }
 })

@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import closeIgm from '../../assets/close.svg'
 import incomeImg from '../../assets/income.svg'
 import outcomeImg from '../../assets/outcome.svg'
+import { api } from '../../services/api';
 
 
 import * as S from './styles'
@@ -21,11 +22,13 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
   function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
 
-    console.log({
+    const data = {
       title,
       value,
       category
-    })
+    }
+
+    api.post('/trasactions', data)
     
   }
 

@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import closeIgm from '../../assets/close.svg'
 import incomeImg from '../../assets/income.svg'
 import outcomeImg from '../../assets/outcome.svg'
-import { useTransactions } from "../../TransactionsContext";
+import { useTransactions } from "../../hooks/useTransactions";
 
 
 import * as S from './styles'
